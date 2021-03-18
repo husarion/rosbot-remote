@@ -8,6 +8,7 @@ USER husarion
 WORKDIR /home/husarion
 
 RUN sudo apt update && \
+    sudo apt upgrade -y && \
     sudo apt install -y \
     ros-foxy-nav2-rviz-plugins \
     ros-foxy-rmw-cyclonedds-cpp && \

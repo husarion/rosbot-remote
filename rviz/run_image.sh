@@ -1,11 +1,6 @@
 #!/bin/bash
 
-if [ -z $1 ]; then
-  echo "Defaulting to rosbot_remote/rviz"
-  image_to_run=rosbot_remote/rviz:latest 
-else
-  image_to_run=$1
-fi
+image_to_run=rosbot_remote/rviz:latest 
 
 docker run --net=host --privileged --rm \
 --runtime=nvidia \
