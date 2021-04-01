@@ -9,10 +9,8 @@ else
 fi
 
 docker run --net=host --privileged --rm \
---runtime=nvidia \
 --env=ROSBOT_IP=$1 \
---env=NVIDIA_VISIBLE_DEVICES=all \
---env=NVIDIA_DRIVER_CAPABILITIES=all \
+--device=/dev/dri:/dev/dri \
 --env=QT_X11_NO_MITSHM=1 \
 --env DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix \

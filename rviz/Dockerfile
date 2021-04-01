@@ -17,9 +17,4 @@ RUN sudo apt update && \
 COPY --chown=husarion resources/entrypoint.sh /home/husarion/
 COPY --chown=husarion resources/config.rviz /home/husarion/.rviz2/default.rviz
 
-ENV NVIDIA_VISIBLE_DEVICES \
-    ${NVIDIA_VISIBLE_DEVICES:-all}
-ENV NVIDIA_DRIVER_CAPABILITIES \
-    ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
-
 ENTRYPOINT ["/home/husarion/entrypoint.sh"]

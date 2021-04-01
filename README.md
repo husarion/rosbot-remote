@@ -9,6 +9,20 @@ This repository contains docker images meant for remote controlling rosbot and r
 
 ## Prerequisites
 
+### Intel GPU
+For Intel graphic card make sure you got mesa library installed 
+
+Check if installed with:
+
+```
+glxinfo | grep Mesa
+```
+
+If not install with
+```
+sudo apt install mesa-utils
+```
+
 Building and running docker containers requires the docker to be installed on host computer. Docker can be installed using following instruction: https://docs.docker.com/engine/install/ubuntu/
 
 Moreover, since we want the containers to launch GUI visible to host system nvidia-docker needs to be installed. Instructions can be found in Nvidia doc: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
