@@ -8,12 +8,19 @@ USER husarion
 WORKDIR /home/husarion
 
 RUN sudo apt update && \
-    sudo apt upgrade -y && \
     sudo apt install -y \
     ros-foxy-nav2-rviz-plugins \
-    ros-foxy-rmw-cyclonedds-cpp && \
+    ros-foxy-rmw-cyclonedds-cpp \
+    ros-foxy-gazebo-ros-pkgs && \
     sudo rm -rf /var/lib/apt/lists/*
-    
+
+RUN mkdir -p rosbot_ws/src && \
+    cd rosbot_ws/src && \
+    git clone https://github.com/husarion/rosbot_description --branch=foxy && \
+    cd .. && \
+    source /opt/ros/foxy/setup.bash && \
+    colcon build
+
 COPY --chown=husarion resources/entrypoint.sh /home/husarion/
 COPY --chown=husarion resources/config.rviz /home/husarion/.rviz2/default.rviz
 
