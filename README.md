@@ -1,8 +1,8 @@
 # rosbot_dockers
 
 > Will be replaced soon by two other repositories:
-> https://github.com/husarion/rviz2-rosbot-docker
-> https://github.com/husarion/tigervnc-client-docker
+> - https://github.com/husarion/rviz2-rosbot-docker
+> - https://github.com/husarion/tigervnc-client-docker
 
 This repository contains docker images meant for remote controlling rosbot and rosbot_pro.
 
