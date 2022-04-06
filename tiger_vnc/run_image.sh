@@ -9,7 +9,6 @@ else
 fi
 
 docker run --net=host --privileged --rm \
---runtime=nvidia \
 --env=ROSBOT_IP=$1 \
 --env=NVIDIA_VISIBLE_DEVICES=all \
 --env=NVIDIA_DRIVER_CAPABILITIES=all \
